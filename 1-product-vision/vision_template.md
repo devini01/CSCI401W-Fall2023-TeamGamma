@@ -1,4 +1,4 @@
-d# CSCI 401 - Software Engineering - [Assignment Title]
+# CSCI 401 - Software Engineering - [Assignment Title]
 
 ## Summary
 [Short description of the product or assignment topic.]
