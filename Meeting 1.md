@@ -25,11 +25,11 @@ Zoom
 
 ### 🗒️ **Notes**:
 - Github IDs
-  o Alixon: adominguez_1369@email.ric.edu
-  o Grant: gdt0044
-  o Chayenne: cgomes4574
-  o Devin: devini01
-  o Khunnary: khunnaryvoeul
+  - Alixon: adominguez_1369@email.ric.edu
+  - Grant: gdt0044
+  - Chayenne: cgomes4574
+  - Devin: devini01
+  - Khunnary: khunnaryvoeul
 - Meet on Mondays at 5 pm
 - Meet on Wednesdays at 12:30 pm (backup)
 - Most experience in Java
