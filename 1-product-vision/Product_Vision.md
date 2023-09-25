@@ -45,11 +45,11 @@ The increase in popularity of limited edition sneakers provides us with the oppo
 ## Product Vision Board
 Bots is a software application that runs automated tasks over the internet. In raffle apps bots are being used to create fake profiles to gain more entries in these raffles giving a disadvantage to other customers. The purpose of developing this raffle app is to construct a more equitable process for raffling off high demand merchandise to customers by counteracting the use of “bots”.
 
-# Target audience:
+### Target audience:
 - Sneaker Enthusiasts
 - Students
 
-# Raffe app will prevent the use of bots through security measures such as
+### Raffe app will prevent the use of bots through security measures such as
 - Implementing the use of a Captcha system
 - Extra verification steps (email/number verification)
 - Other key features:
