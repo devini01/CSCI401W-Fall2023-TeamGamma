@@ -49,7 +49,7 @@ Bots is a software application that runs automated tasks over the internet. In r
 - Sneaker Enthusiasts
 - Students
 
-### Raffe app will prevent the use of bots through security measures such as
+### Raffe app will prevent the use of bots through security measures such as:
 - Implementing the use of a Captcha system
 - Extra verification steps (email/number verification)
 - Other key features:
