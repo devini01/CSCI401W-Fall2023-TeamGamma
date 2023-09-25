@@ -70,19 +70,18 @@ Bots is a software application that runs automated tasks over the internet. In r
 | **Unique Value Prop.**   | users can have a fairer chance to win raffles compared to other apps due to the app’s focus on bot prevention|
 | **Unfair Advantage**     | There are already some sneaker raffle apps out there that try to prevent bots. 
 Many people who have used unfair sneaker raffle apps can feel that there’s no point in entering in any more raffles|
-| **Customer Segments**    | - [Segment 1]                                        |
-|                          | - [Segment 2]                                        |
+| **Customer Segments**    | - Sneaker enthusiasts                                |
+|                          |                                                      |
+| **Key Metrics**          | - Number of users                                    |
+|                          | - Number of sneakers sold                            |
 |                          | - ...                                                |
-| **Key Metrics**          | - [Metric 1]                                         |
-|                          | - [Metric 2]                                         |
-|                          | - ...                                                |
-| **Channels**             | - [Channel 1]                                        |
-|                          | - [Channel 2]                                        |
-|                          | - ...                                                |
-| **Cost Structure**       | [List down the various costs involved.]              |
-| **Revenue Streams**      | [List down the potential sources of revenue.]        |
+| **Channels**             | - Social Media (new releases and dates)              |
+|                          | - Text/email notifications (for raffles and results) |
+|                          |                                                      |
+| **Cost Structure**       | - Acquiring deals with the sneaker brands/cost to build|
+| **Revenue Streams**      | - Commission on sold shoes through our app/subscription|
 
 ---
 
 ## Risks
-[Discuss potential risks or challenges associated with the product.]
+Preventing bots from participating in the raffles can require more than one method and even then cannot always guarantee a 100% bot-free app. There is the risk of winners not receiving their order (this can be due to a wrong address or the shipping company losing the order). With sensitive information given by users, extra precautions must be taken to ensure that their information cannot be stolen or leaked.
