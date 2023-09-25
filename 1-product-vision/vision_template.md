@@ -61,15 +61,15 @@ Bots is a software application that runs automated tasks over the internet. In r
 
 | **Segment**              | **Description**                                      |
 |--------------------------|------------------------------------------------------|
-| **Problem**              | - preventing bots                                    |
-|                          | - dealing with different time zones                  |
+| **Problem**              | - Preventing bots                                    |
+|                          | - Dealing with different time zones                  |
 |                          |                                                      |
-| **Solution**             | - extra verification steps to ensure legitimacy of account (email/number verification)|
-|                          | - look into free libraries that help with timezones  |
+| **Solution**             | - Extra verification steps to ensure legitimacy of account (email/number verification)|
+|                          | - Look into free libraries that help with timezones  |
 |                          |                                                      |
 | **Unique Value Prop.**   | - Users can have a fairer chance to win raffles compared to other apps due to the app’s focus on bot prevention|
 | **Unfair Advantage**     | - There are already some sneaker raffle apps out there that try to prevent bots.|
-|                          | Many people who have used unfair sneaker raffle apps can feel that there’s no point in entering in any more raffles|
+|                          | - Many people who have used unfair sneaker raffle apps can feel that there’s no point in entering in any more raffles|
 | **Customer Segments**    | - Sneaker enthusiasts                                |
 | **Key Metrics**          | - Number of users                                    |
 |                          | - Number of sneakers sold                            |
