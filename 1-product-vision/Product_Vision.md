@@ -1,4 +1,4 @@
-# CSCI 401 - Software Engineering - [Assignment Title]
+# CSCI 401 - Software Engineering - Product Vision
 
 ## Summary
 The purpose of our program is to create a fair sneaker raffle system. Utilizing bot prevention practices and time-specific attendance to raffles, we hope to develop an app that prioritizes equal opportunity for its user base.
