@@ -69,12 +69,10 @@ Bots is a software application that runs automated tasks over the internet. In r
 |                          |                                                      |
 | **Unique Value Prop.**   | users can have a fairer chance to win raffles compared to other apps due to the app’s focus on bot prevention|
 | **Unfair Advantage**     | There are already some sneaker raffle apps out there that try to prevent bots. 
-Many people who have used unfair sneaker raffle apps can feel that there’s no point in entering in any more raffles|
+|Many people who have used unfair sneaker raffle apps can feel that there’s no point in entering in any more raffles|
 | **Customer Segments**    | - Sneaker enthusiasts                                |
-|                          |                                                      |
 | **Key Metrics**          | - Number of users                                    |
 |                          | - Number of sneakers sold                            |
-|                          | - ...                                                |
 | **Channels**             | - Social Media (new releases and dates)              |
 |                          | - Text/email notifications (for raffles and results) |
 |                          |                                                      |
