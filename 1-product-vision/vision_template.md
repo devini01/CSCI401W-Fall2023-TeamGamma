@@ -64,8 +64,7 @@ Bots is a software application that runs automated tasks over the internet. In r
 | **Problem**              | - preventing bots                                    |
 |                          | - dealing with different time zones                  |
 |                          |                                                      |
-| **Solution**             | - extra verification steps to ensure                 |
-|                             legitimacy of account (email/number verification)  |
+| **Solution**             | - extra verification steps to ensure legitimacy of account (email/number verification)  |
 |                          | - look into free libraries that help with timezones  |
 |                          |                                                      |
 | **Unique Value Prop.**   | [What makes the product unique.]                     |
