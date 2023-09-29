@@ -14,16 +14,16 @@
 - Grant
 
 
-2. `[Product Vision]`: …
+2. `[Product Vision]`:
    
 - The product vision highlights the significance of the sneaker app and how it  addresses the issue of “bots” creating an unfair process for customers to acquire high demand sneakers in its raffles.
 - Alixson
 
-4. `[Vision Statement]`: …
+4. `[Vision Statement]`: 
    
 - The vision statement states the overall objective of the sneaker app and its focus on creating a fair raffle system for users.
 - Devin
-5. `[Product Vision Board]`: …
+5. `[Product Vision Board]`: 
   
 - The product vision board gave a description of the sneaker app, it’s key features and the target audience.
 - Khunnary
@@ -55,7 +55,7 @@ We were able to divide up the tasks easily in the assignment and shared the work
 *(Identify areas where the team can make changes to be more efficient, effective, or collaborative in the next sprint.)*
 
 1. **Improvement 1**: Short description about the area of improvement. *(e.g., "Need to establish clearer communication guidelines for remote work.")*
-
+In this sprint, everyone was able to attend and contribute equally. For our next sprint we can improve on maintaing communication and setting clear tasks for everyone.
 
 
 
