@@ -16,7 +16,7 @@
 
 2. `[Product Vision]`:
    
-- The product vision highlights the significance of the sneaker app and how it  addresses the issue of “bots” creating an unfair process for customers to acquire high demand sneakers in its raffles.
+- The product vision highlights the significance of the sneaker app and how it  addresses the issue of “bots” creating an unfair process for customers to acquire high-demand sneakers in its raffles.
 - Alixson
 
 3. `[Vision Statement]`: 
@@ -39,7 +39,7 @@
 *(Reflect on the process, decisions made, tools used, and the challenges encountered. Discuss any insights that the team can take forward into the next sprint.)*
 
 1. **Lesson 1**:
-Communication between team members was great. There was an issue with the team meeting time due to the deadline of the assignment so we adjusted our meeting date and regularly communicated in class and via microsoft teams.
+Communication between team members was great. There was an issue with the team meeting time due to the deadline of the assignment so we adjusted our meeting date and regularly communicated in class and via Microsoft teams.
 
 
 ### 🌟 **Wins**:
@@ -55,7 +55,7 @@ We were able to divide up the tasks easily in the assignment and shared the work
 *(Identify areas where the team can make changes to be more efficient, effective, or collaborative in the next sprint.)*
 
 1. **Improvement 1**: Short description about the area of improvement. *(e.g., "Need to establish clearer communication guidelines for remote work.")*
-In this sprint, everyone was able to attend and contribute equally. For our next sprint we can improve on maintaing communication and setting clear tasks for everyone.
+In this sprint, everyone was able to attend and contribute equally. For our next sprint, we can improve on maintaining communication and setting clear tasks for everyone.
 
 
 
