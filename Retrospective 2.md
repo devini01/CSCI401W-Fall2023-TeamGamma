@@ -19,16 +19,16 @@
 - The product vision highlights the significance of the sneaker app and how it  addresses the issue of “bots” creating an unfair process for customers to acquire high demand sneakers in its raffles.
 - Alixson
 
-4. `[Vision Statement]`: 
+3. `[Vision Statement]`: 
    
 - The vision statement states the overall objective of the sneaker app and its focus on creating a fair raffle system for users.
 - Devin
-5. `[Product Vision Board]`: 
+4. `[Product Vision Board]`: 
   
 - The product vision board gave a description of the sneaker app, it’s key features and the target audience.
 - Khunnary
    
-6. `[Lean Canvas\Risks]`:
+5. `[Lean Canvas\Risks]`:
 - The Lean Canvas provides a template that shows the problems, solutions, value, advantages and risks.
 - Chayenne
      
