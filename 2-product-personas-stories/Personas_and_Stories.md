@@ -26,15 +26,15 @@
 
 ## Product Definition
 
-\<Insert your executive summary—briefly describe your product's purpose and goals.>
+The aim of this app is to revolutionize the world of sneaker raffles by creating equal opportunities for its user base. We will accomplish this through various security and verification practices set up to prevent the usage of bots in our raffles. The success of this app could lead all the way up to integration with major brands within the industry. Ultimately we want to bring the power back to the user, from the hardcore sneaker enthusiasts all the way to the casual student who just wants a chance at the hot new pair on the market.
 
 ## Vision
 
-\<Provide a concise vision statement for your product.>
+The purpose of our program is to make a fairer sneaker raffle system. In the past people would have to camp out in order to get a limited release of a pair of sneakers they wanted. Over time apps took over which made the transactions safer and quicker. However, the development of automated software called "bots" has made it so a select few with this software are able to snag and to purchase the product and in turn resell them for profit. This has ruined the love and passion for many collectors over time. Our overarching vision encompasses the widespread adoption or integration of our program by major brand entities within the industry. This strategic alignment would effectively level the playing field, ensuring that every individual is afforded an opportunity to purchase their desired pair of sneakers.
 
 ## Product Name
 
-\<Introduce the name of your product and briefly explain its purpose.>
+***TBD***
 
 ## Product Personas
 
