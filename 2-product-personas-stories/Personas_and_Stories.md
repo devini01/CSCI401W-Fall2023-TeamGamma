@@ -152,6 +152,7 @@ A user must login to their account in order to view sneakers, make purchases, an
 - This screen will request the user to input their email and password inorder to login
 
 
+![login_ENGINEER](https://github.com/devini01/CSCI401W-Fall2023-TeamGamma/assets/144073896/1f04864e-5138-4485-9ab8-6acd82893faa)
 
 
 
