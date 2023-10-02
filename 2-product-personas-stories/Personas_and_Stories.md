@@ -60,7 +60,7 @@ The purpose of our program is to make a fairer sneaker raffle system. In the pas
 
 ### Product Scenario 1
 
-Scenario: A collector of limited edition shoes, Arya Morris wishes to receive a pair of the new Jumpshoe 11’s, which have just been released on the market so she can add to her large collection of Jumpshoe's she already has.
+- A collector of limited edition shoes, Arya Morris wishes to receive a pair of the new Jumpshoe 11’s, which have just been released on the market so she can add to her large collection of Jumpshoe's she already has.
 
 ### Product Scenario 2
 
