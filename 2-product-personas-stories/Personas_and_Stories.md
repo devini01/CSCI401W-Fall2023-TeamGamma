@@ -151,13 +151,18 @@ A user must login to their account in order to view sneakers, make purchases, an
 ### Login Screen
 - This screen will request the user to input their email and password inorder to login
 
-
 ![login_ENGINEER](https://github.com/devini01/CSCI401W-Fall2023-TeamGamma/assets/144073896/1f04864e-5138-4485-9ab8-6acd82893faa)
 
 
+### Raffle Screen
+- Rough idea of what the shoes in the raffle section will look like. The release date will be displayed above the shoe.
 
+![raffle_ENGINEER](https://github.com/devini01/CSCI401W-Fall2023-TeamGamma/assets/144073896/9f7569ac-733a-4b8b-8f27-d5c9a917dcbf)
 
+### Enter a Raffle
+- From the raffle section the user will be able to click the enter raffle button. From there it will take the user to another screen with more info on that specific pair of shoes. Clicking the enter raffle button will take you to the final screen where the user will input their personal information and then confirm their entry.
 
+![enterRaffle_ENGINEER](https://github.com/devini01/CSCI401W-Fall2023-TeamGamma/assets/144073896/9cf1776c-2a8c-45e7-b82f-3ae928a0389e)
 
 
 
