@@ -40,19 +40,19 @@ The purpose of our program is to make a fairer sneaker raffle system. In the pas
 
 ### Persona 1
 
-**\<Persona Role\>**
+**Collector**
 
 - A collector of shoes. An individual who consistently utilizes raffle systems to gain a chance at owning all of the most coveted shoes that are released.
 
 ### Persona 2
 
-**\<Persona Role\>**
+**Inexperienced Buyer**
 
 - An inexperienced sneaker buyer (user) who wants to purchase sneakers for themselves or as a gift for someone.
 
 ### Persona 3
 
-**\<Persona Role\>**
+**Teenager**
 
 - A teenager who wants to browse through both the raffle and in-stock sections to find the right pair of sneakers for themself.
 
