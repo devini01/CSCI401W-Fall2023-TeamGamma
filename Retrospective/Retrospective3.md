@@ -15,13 +15,13 @@
     - Persona 1 focuses on a user who is utilizing the sneaker raffle system to purchase new released sneakers.
     - Devin Irons
 
-2. `[Persona 2/User Story]`: ...
+2. `[Persona 2/User Story]`: 
     - Persona 2 focuses on a user who is using the app for the first time and heard the app was simple and easy to use and wanted to purchase sneakers outside of the raffle.
     - Khunnary Voeul
-3. `[Persona 3/Useer Story]`: ...
+3. `[Persona 3/Useer Story]`: 
     - Persona 3 focuses on a user who creates an account and purchasing through their account.
     - Chayenne Gomes
-4. `[User Experience]`: ...
+4. `[User Experience]`: 
     - User experience shows the different features the app will have which includes the login page and ability to enter a raffle.
     - Alixson Dominguez
 
@@ -36,32 +36,25 @@
 1. **Lesson 1**: Short description about the lesson. *(e.g., "Regular check-ins increase team cohesion.")*
    Be more prepared, on time and not procrastinate.
 
-3. **Lesson 2**: ...
-
-*(Continue as needed)*
-
----
 
 ### 🌟 **Wins**:
 
 *(Celebrate your successes! List major or minor accomplishments, breakthroughs, or moments of clarity.)*
 
 1. **Win 1**: Brief description about the win. *(e.g., "Successfully integrated the login module with the backend.")*
-  Communication went well, and the work was divided up well. 
-2. **Win 2**: ...
+  Communication went well, and the work was divided up well.
 
-*(Continue as needed)*
 
----
 
 ### 🔄 **Areas for Improvement**:
 
 *(Identify areas where the team can make changes to be more efficient, effective, or collaborative in the next sprint.)*
 
 1. **Improvement 1**: Short description about the area of improvement. *(e.g., "Need to establish clearer communication guidelines for remote work.")*
-We can improve on not procrastinating and be more proactive with getting ahead of assignments and getting familiar with android studios.
+   Improve on not procrastinating. 
 
-3. **Improvement 2**: ...
+3. **Improvement 2**:
+   Be more proactive with getting ahead of assignments and getting familiar with android studios.
 
 *(Continue as needed)*
 
