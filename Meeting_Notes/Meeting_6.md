@@ -24,8 +24,6 @@ Zoom
 
 
 ### 🗒️ **Notes**:
-This weeks goals is to get familiar with android studios and work through the tutorial to see what its capable of and how we can utilize it for our app
-Also use Use trello to solidify what we want to focus on .
-Making sure java doesnt have any limitations.
-
-proof of concepts for trello, 
+  - This weeks goals is to get familiar with android studios and work through the tutorial to see what its capable of and how we can utilize it for our app
+  - Also use Use trello to solidify what we want to focus on .
+  - Making sure java doesnt have any limitations.
