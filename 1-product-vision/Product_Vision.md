@@ -37,11 +37,11 @@ The purpose of our program is to make a fairer sneaker raffle system. In the pas
 
 ## Vision Statement
 
-The increase in popularity of limited edition sneakers provides us with the opportunity to create a necessary alternative to current sneaker raffle applications that are on the market. We will offer a fair and easy to use raffle system that can provide users with the opportunity to gain access to sought after sneakers. Our idea is to create a “bot-less” product that is void of automated accounts that will provide certain individuals with a higher chance of winning the raffles.
+The increase in popularity of limited edition sneakers provides us with the opportunity to create a necessary alternative to current sneaker raffle applications that are on the market. We will offer a fair and easy-to-use raffle system that can provide users with the opportunity to gain access to sought-after sneakers. Our idea is to create a “bot-less” product that is void of automated accounts that will provide certain individuals with a higher chance of winning the raffles.
 
 ## Product Vision Board
 
-Bots is a software application that runs automated tasks over the internet. In raffle apps bots are being used to create fake profiles to gain more entries in these raffles giving a disadvantage to other customers. The purpose of developing this raffle app is to construct a more equitable process for raffling off high demand merchandise to customers by counteracting the use of “bots”.
+Bots is a software application that runs automated tasks over the internet. In raffle apps, bots are being used to create fake profiles to gain more entries in these raffles giving a disadvantage to other customers. The purpose of developing this raffle app is to construct a more equitable process for raffling off high-demand merchandise to customers by counteracting the use of “bots”.
 
 ### Target audience:
 - Sneaker Enthusiasts
@@ -51,7 +51,7 @@ Bots is a software application that runs automated tasks over the internet. In r
 - Implementing the use of a Captcha system
 - Extra verification steps (email/number verification)
 - Other key features:
-- Time specific attendance for entry into raffle
+- Time-specific attendance for entry into the raffle
 
 
 ---
