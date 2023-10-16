@@ -1,7 +1,7 @@
 # CSCI 401 - Software Engineering - Product Vision
 
 ## Summary
-The purpose of our program is to create a fair sneaker raffle system. Utilizing bot prevention practices and time-specific attendance to raffles, we hope to develop an app that prioritizes equal opportunity for its user base.
+The purpose of our app "Sole Seeker" is to create a fair sneaker raffle system. Utilizing bot prevention practices and time-specific attendance to raffles, we hope to develop an app that prioritizes equal opportunity for its user base.
 **Team: [Team Name]**
 
 ## Table of Contents
@@ -29,7 +29,7 @@ The purpose of our program is to create a fair sneaker raffle system. Utilizing 
 
 ## Executive Summary
 
-The aim of this app is to revolutionize the world of sneaker raffles by creating equal opportunities for its user base. We will accomplish this through various security and verification practices set up to prevent the usage of bots in our raffles. The success of this app could lead all the way up to integration with major brands within the industry. Ultimately we want to bring the power back to the user, from the hardcore sneaker enthusiasts all the way to the casual student who just wants a chance at the hot new pair on the market. 
+The aim of Sole Seeker is to revolutionize the world of sneaker raffles by creating equal opportunities for its user base. We will accomplish this through various security and verification practices set up to prevent the usage of bots in our raffles. The success of this app could lead all the way up to integration with major brands within the industry. Ultimately we want to bring the power back to the user, from the hardcore sneaker enthusiasts all the way to the casual student who just wants a chance at the hot new pair on the market. 
 
 ## Product Vision
 
