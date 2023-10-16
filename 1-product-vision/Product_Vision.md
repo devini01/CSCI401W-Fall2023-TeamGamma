@@ -33,7 +33,7 @@ The aim of this app is to revolutionize the world of sneaker raffles by creating
 
 ## Product Vision
 
-The purpose of our program is to make a fairer sneaker raffle system. In the past people would have to camp out in order to get a limited release of a pair of sneakers they wanted. Over time apps took over which made the transactions safer and quicker. However, the development of automated software called "bots" has made it so a select few with this software are able to snag and to purchase the product and in turn resell them for profit. This has ruined the love and passion for many collectors over time. Our overarching vision encompasses the widespread adoption or integration of our program by major brand entities within the industry. This strategic alignment would effectively level the playing field, ensuring that every individual is afforded an opportunity to purchase their desired pair of sneakers.
+For sneaker enthusiasts who want to buy their desired pairs of sneakers, the Sole Seeker app is a mobile application that allows users to enter sneaker raffles and make purchases from a selection of already-released sneakers. Unlike other sneaker raffle apps, our app aims to give everyone a fair chance at winning raffles by focusing our attention on bot prevention
 
 ## Vision Statement
 
