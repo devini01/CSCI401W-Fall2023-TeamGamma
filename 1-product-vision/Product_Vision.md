@@ -6,6 +6,7 @@ The purpose of our app "Sole Seeker" is to create a fair sneaker raffle system. 
 
 ## Table of Contents
 
+- [Summary](#Summary)
 - [Team](#team)
 - [Executive Summary](#executive-summary)
 - [Product Vision](#product-vision)
