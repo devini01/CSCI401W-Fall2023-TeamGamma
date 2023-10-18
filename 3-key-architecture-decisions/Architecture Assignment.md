@@ -1,4 +1,4 @@
-# Key Architectural Decisions
+# Key Architectural Decisions for Sole Seeker
 
 ## Table of Contents
 
