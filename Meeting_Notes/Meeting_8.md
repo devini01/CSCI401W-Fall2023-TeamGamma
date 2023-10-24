@@ -27,7 +27,7 @@
 - Login: Chayenne
 - Raffle: Alixson
 - Shop: Grant
-- Checkout: Gina
+- Checkout: Khunnary
 - Firebase API: Devin
 
 We will be working on our individual assignments while collaborating with one another in real-time throughout the week. We will be documenting our progress and uploading a short video explaining our progress/issues we have had during this sprint. 
