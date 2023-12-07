@@ -1,82 +1,59 @@
-package com.codingstuff.shoeapp.views;
+package com.example.sneaker.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.cardview.widget.CardView;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.codingstuff.shoeapp.R;
-import com.codingstuff.shoeapp.utils.adapter.CartAdapter;
-import com.codingstuff.shoeapp.utils.model.ShoeCart;
-import com.codingstuff.shoeapp.viewmodel.CartViewModel;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.example.sneaker.R;
+import com.example.sneaker.utils.adapter.CartAdapter;
+import com.example.sneaker.utils.model.ShoeCart;
+import com.example.sneaker.viewmodel.CartViewModel;
+import com.stripe.android.PaymentConfiguration;
+import com.stripe.android.paymentsheet.PaymentSheet;
+import com.stripe.android.paymentsheet.PaymentSheetResult;
 
-import java.util.List;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class CartActivity extends AppCompatActivity implements CartAdapter.CartClickedListeners {
 
-    // Variable declarations for UI components and view model
-    private RecyclerView recyclerView;
     private CartViewModel cartViewModel;
     private TextView totalCartPriceTv, textView;
     private AppCompatButton checkoutBtn;
     private CardView cardView;
     private CartAdapter cartAdapter;
+    private PaymentSheet paymentSheet;
+    private String paymentIntentClientSecret;
+    private PaymentSheet.CustomerConfiguration customerConfig;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cart);
+        setContentView(R.layout.activity_cart);  // Make sure this is the correct layout
 
-        // Initialize UI components
         initializeVariables();
-
-        // Retrieve and check if the paymentSuccess flag is passed from the previous activity
-        boolean paymentSuccess = getIntent().getBooleanExtra("paymentSuccess", false);
-        Log.d("CartActivity", "Payment success: " + paymentSuccess);
-
-        // If payment is successful, show the order confirmation view
-        if (paymentSuccess) {
-            // Hide checkout elements and show confirmation
-            textView.setVisibility(View.INVISIBLE);
-            checkoutBtn.setVisibility(View.INVISIBLE);
-            totalCartPriceTv.setVisibility(View.INVISIBLE);
-          recyclerView.setVisibility(View.INVISIBLE); // To hide the cart list
-            cardView.setVisibility(View.VISIBLE); // Show the order confirmation card
-        } else {
-            // If payment is not successful, display the cart items
-            cartViewModel.getAllCartItems().observe(this, new Observer<List<ShoeCart>>() {
-                @Override
-                public void onChanged(List<ShoeCart> shoeCarts) {
-                    double price = 0;
-                    cartAdapter.setShoeCartList(shoeCarts);
-                    for (int i = 0; i < shoeCarts.size(); i++) {
-                        price += shoeCarts.get(i).getTotalItemPrice();
-                    }
-                    totalCartPriceTv.setText(String.valueOf(price));
-                }
-            });
-        }
-        // Set an OnClickListener for the checkout button
-        checkoutBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Start the OrderConfirmationActivity (i.e payment screen)
-                Intent intent = new Intent(CartActivity.this, OrderConfirmationActivity.class);
-                startActivity(intent);
-            }
-        });
+        fetchPaymentApi();
     }
 
-    // Method to initialize UI components
     private void initializeVariables() {
         cartAdapter = new CartAdapter(this);
         textView = findViewById(R.id.textView2);
@@ -84,15 +61,89 @@ public class CartActivity extends AppCompatActivity implements CartAdapter.CartC
         totalCartPriceTv = findViewById(R.id.cartActivityTotalPriceTv);
         checkoutBtn = findViewById(R.id.cartActivityCheckoutBtn);
         cartViewModel = new ViewModelProvider(this).get(CartViewModel.class);
-        recyclerView = findViewById(R.id.cartRecyclerView);
+
+        RecyclerView recyclerView = findViewById(R.id.cartRecyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(cartAdapter);
+
+        checkoutBtn.setOnClickListener(view -> {
+            //Old Checkout Button Code
+//            cartViewModel.deleteAllCartItems();
+//            textView.setVisibility(View.INVISIBLE);
+//            checkoutBtn.setVisibility(View.INVISIBLE);
+//            totalCartPriceTv.setVisibility(View.INVISIBLE);
+//            cardView.setVisibility(View.VISIBLE);
+
+            //New Checkout Button Code
+            if (paymentIntentClientSecret != null)
+                paymentSheet.presentWithPaymentIntent(paymentIntentClientSecret, new PaymentSheet.Configuration("Codes Easy", customerConfig));
+        });
+
+        //Old Btn no longer needed, left for comprehensibility
+//        Button button = findViewById(R.id.btn_pay);
+//        button.setOnClickListener(v -> {
+//            if (paymentIntentClientSecret != null)
+//                paymentSheet.presentWithPaymentIntent(paymentIntentClientSecret, new PaymentSheet.Configuration("Codes Easy", customerConfig));
+//        });
+
+        paymentSheet = new PaymentSheet(this, this::onPaymentSheetResult);
+    }
+
+    private void fetchPaymentApi() {
+        RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
+        String url = "https://us-central1-sneaker-5d3ae.cloudfunctions.net/Sneaker?amt=50";
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                response -> {
+                    Log.e("R", response);
+                    try {
+                        final JSONObject result = new JSONObject(response);
+                        customerConfig = new PaymentSheet.CustomerConfiguration(
+                                result.getString("customer"),
+                                result.getString("ephemeralKey")
+                        );
+                        paymentIntentClientSecret = result.getString("paymentIntent");
+                        PaymentConfiguration.init(getApplicationContext(), result.getString("publishableKey"));
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                },
+                error -> {
+                    error.printStackTrace();
+                    // Handle error (e.g., show a Toast)
+                    Toast.makeText(this, "Failed to fetch payment information", Toast.LENGTH_SHORT).show();
+                }) {
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> paramV = new HashMap<>();
+                paramV.put("authKey", "abc");
+                return paramV;
+            }
+        };
+        queue.add(stringRequest);
+    }
+
+    private void onPaymentSheetResult(final PaymentSheetResult paymentSheetResult) {
+        if (paymentSheetResult instanceof PaymentSheetResult.Canceled) {
+            Log.e("R:", "Canceled");
+        } else if (paymentSheetResult instanceof PaymentSheetResult.Failed) {
+            Log.e("App", "Got error: ", ((PaymentSheetResult.Failed) paymentSheetResult).getError());
+        } else if (paymentSheetResult instanceof PaymentSheetResult.Completed) {
+            // Display for example, an order confirmation screen
+            Log.e("R:", "Completed");
+        }
     }
 
     @Override
     public void onDeleteClicked(ShoeCart shoeCart) {
         cartViewModel.deleteCartItem(shoeCart);
+    }
+
+    @Override
+    public void onDeletedClicked(ShoeCart shoeCart) {
+
     }
 
     @Override
