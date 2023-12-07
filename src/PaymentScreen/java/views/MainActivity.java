@@ -1,4 +1,4 @@
-package com.codingstuff.shoeapp.views;
+package com.example.sneaker.views;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,16 +8,15 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.codingstuff.shoeapp.R;
-import com.codingstuff.shoeapp.utils.adapter.ShoeItemAdapter;
-import com.codingstuff.shoeapp.utils.model.ShoeCart;
-import com.codingstuff.shoeapp.utils.model.ShoeItem;
-import com.codingstuff.shoeapp.viewmodel.CartViewModel;
+import com.example.sneaker.R;
+import com.example.sneaker.utils.adapter.ShoeItemAdapter;
+import com.example.sneaker.utils.model.ShoeCart;
+import com.example.sneaker.utils.model.ShoeItem;
+import com.example.sneaker.viewmodel.CartViewModel;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
@@ -25,7 +24,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements ShoeItemAdapter.ShoeClickedListeners {
 
-    // Variable declarations for UI components and data handling
     private RecyclerView recyclerView;
     private List<ShoeItem> shoeItemList;
     private ShoeItemAdapter adapter;
@@ -37,40 +35,25 @@ public class MainActivity extends AppCompatActivity implements ShoeItemAdapter.S
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Setting the content view to the layout for MainActivity
         setContentView(R.layout.activity_main);
 
-
         initializeVariables();
-        // Populate the list of shoe items
         setUpList();
 
         adapter.setShoeItemList(shoeItemList);
         recyclerView.setAdapter(adapter);
 
-        // Set the list of shoe items to the adapter and attach the adapter to the RecyclerView
-        cartImageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Create an intent to start CartActivity
-                startActivity(new Intent(MainActivity.this, CartActivity.class));
-            }
-        });
+
+        cartImageView.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, CartActivity.class)));
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        // Observe the cart items from the ViewModel and update the local list
-        viewModel.getAllCartItems().observe(this, new Observer<List<ShoeCart>>() {
-            @Override
-            public void onChanged(List<ShoeCart> shoeCarts) {
-                shoeCartList.addAll(shoeCarts);
-            }
-        });
+
+        viewModel.getAllCartItems().observe(this, shoeCarts -> shoeCartList.addAll(shoeCarts));
     }
 
-    // Method to populate the list of shoe items with predefined data
     private void setUpList() {
         shoeItemList.add(new ShoeItem("Nike Revolution", "Nike", R.drawable.nike_revolution_road, 15));
         shoeItemList.add(new ShoeItem("Nike Flex Run 2021", "NIKE", R.drawable.flex_run_road_running, 20));
@@ -82,10 +65,9 @@ public class MainActivity extends AppCompatActivity implements ShoeItemAdapter.S
         shoeItemList.add(new ShoeItem("Adidas Ultraboost", "ADIDAS", R.drawable.adidas_ultraboost, 15));
 
     }
-    // Method to initialize UI components and set up the RecyclerView and adapter
+
     private void initializeVariables() {
 
-        // Create an intent to start DetailedActivity with the shoe item details
         cartImageView = findViewById(R.id.cartIv);
         coordinatorLayout = findViewById(R.id.coordinatorLayout);
         shoeCartList = new ArrayList<>();
@@ -99,7 +81,6 @@ public class MainActivity extends AppCompatActivity implements ShoeItemAdapter.S
 
     }
 
-    // Callback method when the 'Add to Cart' button is clicked on a shoe item
     @Override
     public void onCardClicked(ShoeItem shoe) {
 
@@ -110,7 +91,6 @@ public class MainActivity extends AppCompatActivity implements ShoeItemAdapter.S
 
     @Override
     public void onAddToCartBtnClicked(ShoeItem shoeItem) {
-        // Logic to handle adding a shoe item to the cart or updating quantity if it already exists
         ShoeCart shoeCart = new ShoeCart();
         shoeCart.setShoeName(shoeItem.getShoeName());
         shoeCart.setShoeBrandName(shoeItem.getShoeBrandName());
@@ -141,17 +121,11 @@ public class MainActivity extends AppCompatActivity implements ShoeItemAdapter.S
             viewModel.updatePrice(id[0], quantity[0] * shoeCart.getShoePrice());
         }
 
-        makeSnackBar("Item Added To Cart");
+        makeSnackBar();
     }
 
-    // Utility method to display a Snackbar with a message and a 'Go to Cart' action
-    private void makeSnackBar(String msg) {
-        Snackbar.make(coordinatorLayout, msg, Snackbar.LENGTH_SHORT)
-                .setAction("Go to Cart", new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        startActivity(new Intent(MainActivity.this, CartActivity.class));
-                    }
-                }).show();
+    private void makeSnackBar() {
+        Snackbar.make(coordinatorLayout, "Item Added To Cart", Snackbar.LENGTH_SHORT)
+                .setAction("Go to Cart", view -> startActivity(new Intent(MainActivity.this, CartActivity.class))).show();
     }
 }
