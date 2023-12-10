@@ -10,7 +10,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+
 public class ForgotpassActivity extends AppCompatActivity {
+    FirebaseAuth auth = FirebaseAuth.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,13 +23,16 @@ public class ForgotpassActivity extends AppCompatActivity {
         setContentView(R.layout.activity_forgotpass);
 
         EditText email = findViewById(R.id.email);
-        TextView alreadyKnowPass = (TextView) findViewById(R.id.alreadyKnowPass);
-        TextView resetButton = (TextView) findViewById(R.id.resetButton);
+        TextView alreadyKnowPass = findViewById(R.id.alreadyKnowPass);
+        TextView resetButton = findViewById(R.id.resetButton);
 
         // When user clicks on "Reset":
         resetButton.setOnClickListener(v -> {
             // validateEmail method is on line 45
-            validateEmail(email);
+            if (validateEmail(email)) {
+                String emailAddress = email.getText().toString();
+                sendPasswordResetEmail(emailAddress);
+            }
         });
 
         // When user clicks on "Already Know Your Password?", screen switches to main screen
@@ -39,7 +47,7 @@ public class ForgotpassActivity extends AppCompatActivity {
         String emailInput = email.getText().toString();
 
         // if email is in valid format, email will be sent
-        if(!emailInput.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(emailInput).matches()) {
+        if (!emailInput.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(emailInput).matches()) {
             Toast.makeText(this, "Email Sent.", Toast.LENGTH_SHORT).show();
             return true;
 
@@ -48,5 +56,17 @@ public class ForgotpassActivity extends AppCompatActivity {
             Toast.makeText(this, "Invalid Email.", Toast.LENGTH_SHORT).show();
             return false;
         }
+    }
+
+    // Sends a password to reset email
+    private void sendPasswordResetEmail(String emailAddress) {
+        auth.sendPasswordResetEmail(emailAddress)
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(getApplicationContext(), "Check Your Email", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Failed to send reset email.", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 }
