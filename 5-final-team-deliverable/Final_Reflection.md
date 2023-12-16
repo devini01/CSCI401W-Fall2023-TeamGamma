@@ -26,17 +26,17 @@ Reflect on your journey in learning software engineering through concrete scenar
 
 1. **Team Collaboration Approach:**
    Describe how your team used tools like Slack and Trello to coordinate tasks. Share an example of how assigning tasks in Trello helped streamline your group projects and fostered effective communication.
-- Utilized Microsoft Teams to coordinate and meet with one another throughout the entire semester. It allowed us to also share information like helpful YouTube videos to assist with issues we had or if we did not know where to start.
-- Used Trello to delegate tasks to team members and provide each other with a better understanding of our progress throughout the semester.
-- Took advantage of GitHub's features and shared/expanded upon each other's code throughout the semester to work off of one another.
+    - Utilized Microsoft Teams to coordinate and meet with one another throughout the entire semester. It allowed us to also share information like helpful YouTube videos to assist with issues we had or if we did not know where to start.
+    - Used Trello to delegate tasks to team members and provide each other with a better understanding of our progress throughout the semester.
+    - Took advantage of GitHub's features and shared/expanded upon each other's code throughout the semester to work off of one another.
 
 2. **Challenges and Overcoming Them:**
    Recall a specific challenge, like debugging a code issue together. Explain how you collaborated to identify the bug's source and successfully resolved it. This experience showcases your problem-solving and teamwork skills.
-- When it came to the later part of the semester, there were many cases of us all getting onto teams and having meetings about the best way to merge. We would work through the errors that came up, like our raffle system not working with the payment screen together.
+    - When it came to the later part of the semester, there were many cases of us all getting onto teams and having meetings about the best way to merge. We would work through the errors that came up, like our raffle system not working with the payment screen together.
 
 3. **Accomplishments and Pride:**
    Highlight a feature you contributed to, such as creating a login system. Discuss how your combined skills enabled the team to deliver a functional feature that enhances user experience.
-- Working together we were able to create a raffle system that uses pieces of everyone's code to function. The login, raffle system, shop, and payment all had a combined effort both together and apart to create a working sneaker raffle app, our end vision for the application.
+    - Working together we were able to create a raffle system that uses pieces of everyone's code to function. The login, raffle system, shop, and payment all had a combined effort both together and apart to create a working sneaker raffle app, our end vision for the application.
 
 4. **Learning and Growth:**
    Provide an example of how you applied a concept learned in class to a practical scenario. Describe how you used version control (like Git) to collaborate on a coding assignment, improving code organization and collaboration.
