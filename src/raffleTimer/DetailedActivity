@@ -1,0 +1,272 @@
+package org.meicode.rafflescreennew.view;
+
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
+
+import org.meicode.rafflescreennew.R;
+import org.meicode.rafflescreennew.utils.model.ShoeItem;
+
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+import java.util.Random;
+
+public class DetailedActivity extends AppCompatActivity {
+
+    private ImageView shoeImageView;
+    private TextView shoeNameTV, shoeBrandNameTV, shoePriceTV;
+    private AppCompatButton addToCartBtn;
+    private ShoeItem shoe;
+    private boolean enteredRaffle = false;
+    private boolean raffleEnded = false;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_detailed);
+
+        initializeVariables();
+
+        shoe = getIntent().getParcelableExtra("shoeItem");
+        if (shoe != null) {
+            setDataToWidgets();
+            setUpCountdownTimer(shoe);
+        }
+
+        enteredRaffle = getEnteredRaffleStatus(); // Retrieve the entered raffle status
+
+        // Set the button text based on the entered raffle status or release date
+        Date releaseDate = shoe != null ? shoe.getReleaseDate() : null;
+        String releaseTime = shoe != null ? shoe.getReleaseTime() : null;
+
+        if (releaseDate != null && releaseTime != null) {
+            long currentTime = System.currentTimeMillis();
+            long releaseDateTime = combineDateTime(releaseDate, releaseTime);
+
+            if (currentTime < releaseDateTime) {
+                // It's before the release date
+                addToCartBtn.setText("Coming Soon");
+                addToCartBtn.setOnClickListener(null); // Disable button click if it's "Coming Soon"
+            } else {
+                // It's after the release date, set the default text for entering the raffle
+                addToCartBtn.setText(enteredRaffle ? "Entered" : "Enter Raffle");
+                addToCartBtn.setOnClickListener(v -> onAddToCartBtnClicked());
+            }
+        } else {
+            // Handle the case where either releaseDate or releaseTime is null
+            addToCartBtn.setText("No Raffle Announced");
+        }
+    }
+
+    private void setDataToWidgets() {
+        shoeNameTV.setText(shoe.getShoeName());
+        shoeBrandNameTV.setText(shoe.getShoeBrandName());
+        shoePriceTV.setText(String.valueOf(shoe.getShoePrice()));
+        shoeImageView.setImageResource(shoe.getShoeImage());
+    }
+
+    private void initializeVariables() {
+        shoeImageView = findViewById(R.id.detailActivityShoeIV);
+        shoeNameTV = findViewById(R.id.detailActivityShoeNameTv);
+        shoeBrandNameTV = findViewById(R.id.detailActivityShoeBrandNameTv);
+        shoePriceTV = findViewById(R.id.detailActivityShoePriceTv);
+        addToCartBtn = findViewById(R.id.detailActivityAddToCartBtn);
+    }
+
+    private void setUpCountdownTimer(ShoeItem shoe) {
+        TextView countDownText = findViewById(R.id.countdown_text);
+
+        Date releaseDate = shoe != null ? shoe.getReleaseDate() : null;
+        Date raffleEndDate = shoe != null ? shoe.getRaffleEndDate() : null;
+        String releaseTime = shoe != null ? shoe.getReleaseTime() : null;
+        String raffleEndTime = shoe != null ? shoe.getRaffleEndTime() : null;
+
+        Log.d("DetailedActivity", "Release Date: " + releaseDate);
+        Log.d("DetailedActivity", "Raffle End Date: " + raffleEndDate);
+
+        if (releaseDate != null && raffleEndDate != null && releaseTime != null && raffleEndTime != null) {
+            long currentTime = System.currentTimeMillis();
+            long releaseDateTime = combineDateTime(releaseDate, releaseTime);
+            long raffleEndDateTime = combineDateTime(raffleEndDate, raffleEndTime);
+
+            if (currentTime < releaseDateTime) {
+                long releaseTimeDifference = releaseDateTime - currentTime;
+                startCountdownTimer(releaseTimeDifference, countDownText, "Release in: ");
+            } else if (currentTime < raffleEndDateTime) {
+                long raffleTimeDifference = raffleEndDateTime - currentTime;
+                startCountdownTimer(raffleTimeDifference, countDownText, "Raffle closes in: ");
+            } else {
+                countDownText.setText("Dates have passed");
+                raffleEnded = true;
+            }
+        } else {
+            Log.e("DetailedActivity", "Invalid date information");
+            countDownText.setText("No valid date information");
+        }
+    }
+
+    private long combineDateTime(Date date, String time) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+
+        String[] timeParts = time.split(":");
+        int hours = Integer.parseInt(timeParts[0]);
+        int minutes = Integer.parseInt(timeParts[1]);
+
+        calendar.set(Calendar.HOUR_OF_DAY, hours);
+        calendar.set(Calendar.MINUTE, minutes);
+        calendar.set(Calendar.SECOND, 0);
+
+        return calendar.getTimeInMillis();
+    }
+
+    private void startCountdownTimer(long timeDifference, TextView countDownText, String prefix) {
+        CountDownTimer timer = new CountDownTimer(timeDifference, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                String formattedTime = formatTimeDaysHoursMinutes(millisUntilFinished);
+                countDownText.setText(prefix + formattedTime);
+            }
+
+            @Override
+            public void onFinish() {
+                countDownText.setText(prefix + "Time expired");
+                raffleEnded = true;
+                // Check the raffle result when the timer finishes
+                checkRaffleResult();
+            }
+        };
+
+        timer.start();
+    }
+
+    private String formatTimeDaysHoursMinutes(long millis) {
+        long days = millis / (24 * 60 * 60 * 1000);
+        long hours = (millis % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000);
+        long minutes = (millis % (60 * 60 * 1000)) / (60 * 1000);
+
+        return String.format(Locale.getDefault(), "%d days, %02d hours, %02d minutes", days, hours, minutes);
+    }
+
+    private void onAddToCartBtnClicked() {
+        Date releaseDate = shoe != null ? shoe.getReleaseDate() : null;
+        Date raffleEndDate = shoe != null ? shoe.getRaffleEndDate() : null;
+        String releaseTime = shoe != null ? shoe.getReleaseTime() : null;
+        String raffleEndTime = shoe != null ? shoe.getRaffleEndTime() : null;
+
+        if (raffleEnded && enteredRaffle) {
+            // Raffle has ended, and the user has entered the raffle
+            checkRaffleResult();
+        } else if (releaseDate != null && raffleEndDate != null && releaseTime != null && raffleEndTime != null) {
+            long currentTime = System.currentTimeMillis();
+            long releaseDateTime = combineDateTime(releaseDate, releaseTime);
+            long raffleEndDateTime = combineDateTime(raffleEndDate, raffleEndTime);
+
+            if (currentTime < releaseDateTime) {
+                // It's before the release date
+                Toast.makeText(DetailedActivity.this, "The raffle is not open yet.", Toast.LENGTH_SHORT).show();
+            } else if (currentTime >= releaseDateTime && currentTime < raffleEndDateTime) {
+                // User can enter or exit the raffle
+                if (enteredRaffle) {
+                    // User wants to exit the raffle
+                    enteredRaffle = false;
+                    Toast.makeText(DetailedActivity.this, "You've exited the raffle.", Toast.LENGTH_SHORT).show();
+                    addToCartBtn.setText("Enter Raffle");
+                    saveEnteredRaffleStatus(false); // Save the entered raffle status
+                } else {
+                    // User can enter the raffle
+                    enteredRaffle = true;
+                    Toast.makeText(DetailedActivity.this, "Raffle entered.", Toast.LENGTH_SHORT).show();
+                    addToCartBtn.setText("Entered");
+                    saveEnteredRaffleStatus(true); // Save the entered raffle status
+                }
+            } else {
+                // Raffle is not open yet or has already ended
+                Toast.makeText(DetailedActivity.this, "The raffle is not open yet or has already ended.", Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            // Handle the case where either releaseDate, raffleEndDate, releaseTime, or raffleEndTime is null
+            Toast.makeText(DetailedActivity.this, "Invalid date or time information", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    // Assigns the user a random number from 0 to 9 when raffle is entered
+    public static int getUserEntry(Random random) {
+        return random.nextInt(1);
+    }
+    // Generates a random winning number from 0 to 9
+    public static int getWinningNum(Random random) {
+        return random.nextInt(1);
+    }
+
+    private void checkRaffleResult() {
+        if (enteredRaffle && raffleEnded) {
+            int userEntry = getUserEntry(new Random());
+            int winningNum = getWinningNum(new Random());
+
+            if (winningNum == userEntry) {
+                // Show pop-up for winning result
+                showRaffleResultDialog(true);
+            } else {
+                // Show pop-up for losing result
+                showRaffleResultDialog(false);
+            }
+        } else {
+            // Handle the case where the user hasn't entered the raffle or the raffle hasn't ended
+            Toast.makeText(DetailedActivity.this, "You haven't entered the raffle or the raffle hasn't ended.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void showRaffleResultDialog(boolean won) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(DetailedActivity.this);
+        builder.setTitle(won ? "Congratulations!" : "Better luck next time!")
+                .setMessage(won ? "You won the raffle! What would you like to do?" : "Unfortunately, you didn't win this time.")
+                .setPositiveButton(won ? "Buy now" : "OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Handle the "Buy now" button click or simply dismiss the dialog for "OK"
+                        if (won) {
+                            // Implement the logic for "Buy now" button click
+                            // For now, let's just close the dialog
+                            dialog.dismiss();
+                        }
+                    }
+                });
+
+        // Add an "Exit" button only if the user won
+        if (won) {
+            builder.setNegativeButton("Exit", (dialog, which) -> {
+                // Handle the "Exit" button click
+                // For now, let's just close the dialog
+                dialog.dismiss();
+            });
+        }
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    private void saveEnteredRaffleStatus(boolean entered) {
+        SharedPreferences preferences = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean("enteredRaffle", entered);
+        editor.apply();
+    }
+
+    private boolean getEnteredRaffleStatus() {
+        SharedPreferences preferences = getPreferences(MODE_PRIVATE);
+        return preferences.getBoolean("enteredRaffle", false);
+    }
+
+}
