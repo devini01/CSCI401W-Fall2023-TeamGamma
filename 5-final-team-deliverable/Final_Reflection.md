@@ -53,8 +53,9 @@ _Meet Sole Seeker, your passport to hassle-free sneaker wins! With a seamless us
 
 Share simple examples of your product's functionality:
 
-- **Example 1:** The user login 
-- **Example 2:** Showcase how your cybersecurity-focused feature detects and alerts users about potentially harmful links.
+- **Example 1:** The user login accesses Firebase to authenticate our users, ensuring that the person accessing the account is the correct individual.
+- **Example 2:** When the user clicks on a shoe with a release date they are brought to that shoe's screen. The countdown timer will display how long until the shoe releases, as well as how long it is until the raffle closes and denies entry.
+- **Example 3:** When the user enters a raffle, they are given a number. If that number matches the winning number then they are informed through a pop up and can purchase the shoe directly from the pop up screen.
 
 ### Technical Architecture Overview
 
@@ -69,8 +70,8 @@ Simplify a technical concept with an example:
 
 Illustrate a coding concept with a relatable analogy:
 
-- **Example:** Describe a conditional statement (like an "if" statement) as a recipe that's followed only if certain conditions, like having all ingredients, are met.
-- **Example 1:** If the release date AND raffle end date AND release time AND raffle end time are not null, a countdown timer is set up. If the current time is less than the release date time, it displays the time until the release date. If the current time is less than the raffle end time, it displays the time until the raffle will close. Else, if the raffle end time has passed the application displays that the dates have passed. 
+- **Example 1:** If the release date AND raffle end date AND release time AND raffle end time are not null, a countdown timer is set up. If the current time is less than the release date time, it displays the time until the release date. If the current time is less than the raffle end time, it displays the time until the raffle will close. Else, if the raffle end time has passed the application displays that the dates have passed.
+
 ### Access Your Work
 
 - **[Presentation Slides](link-to-presentation):** Share a link to your final presentation slides.
