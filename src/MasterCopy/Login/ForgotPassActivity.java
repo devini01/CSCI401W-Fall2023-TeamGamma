@@ -5,14 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class ForgotPassActivity extends AppCompatActivity {
+public class ForgotpassActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +27,7 @@ public class ForgotPassActivity extends AppCompatActivity {
 
         // When user clicks on "Already Know Your Password?", screen switches to main screen
         alreadyKnowPass.setOnClickListener(v -> {
-            Intent intent = new Intent(ForgotPassActivity.this, MainActivity.class);
+            Intent intent = new Intent(ForgotpassActivity.this, MainActivity.class);
             startActivity(intent);
         });
     }
