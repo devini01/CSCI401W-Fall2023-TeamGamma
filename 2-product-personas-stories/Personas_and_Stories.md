@@ -34,7 +34,7 @@ The purpose of our program is to make a fairer sneaker raffle system. In the pas
 
 ## Product Name
 
-***TBD***
+***Sole Seeker***
 
 ## Product Personas
 
