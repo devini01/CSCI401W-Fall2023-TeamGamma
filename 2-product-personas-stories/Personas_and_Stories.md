@@ -68,12 +68,7 @@ The purpose of our program is to make a fairer sneaker raffle system. In the pas
 
 ### Product Scenario 3
 
-- Jasmine Alverez is a 16-years-old high school student who is soon going back to school. She wants to buy a new pair of sneakers for the upcoming school year.
-Since Jasmine wants to have a lot of options to choose from, she decides to use our app. Jasmine enters her email and password to login. 
-Upon logging in, she chooses to take a look at some of the sneakers in the raffle section. The sneakers she 
-finds are slightly pricier than she’d like and the release dates would be cutting it close to the new school year. To avoid the risk of losing a raffle 
-and not having a pair of sneakers for the first day of school, Jasmine goes to browse the sneakers that are in stock. She eventually 
-finds a pair that she likes. She clicks on them and types in her information before confirming her purchase. 
+- Jasmine Alverez is a 23 year old woman looking to have a secure login system that will protect her account by only allowing her to get into the account, protecting her raffle results.
 
 ## User Stories
 
@@ -83,8 +78,7 @@ finds a pair that she likes. She clicks on them and types in her information bef
 
 - The raffle system is the main feature of our app, and will provide an equal opportunity to every user who enters the raffle. 
 This will allow anyone who has a user account to enter the raffle for a chance to acquire limited edition shoes that are highly sought after. 
-The app will send PUSH notifications 15, 10, and 5 minutes before the raffle opens. Only after the time has finished will the raffle be 
-available to enter, for a set amount of time depending on the raffle.
+Only after the time has finished will the raffle be available to enter, for a set amount of time depending on the raffle.
 
 **User Story 1**
 
