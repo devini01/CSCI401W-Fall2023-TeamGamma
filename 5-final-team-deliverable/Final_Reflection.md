@@ -16,7 +16,8 @@
 
 ## Product Vision
 
-- **Product Vision Statement:** Replace this with your refined product vision statement.
+- **Product Vision Statement:** For sneaker enthusiasts seeking a chance to buy their desired pair of shoes. Our app distinguishes its self by offering users an opportunity to engage in fair and exciting raffles. While the app currently focuses on providing users with a user-friendly experience and access to exclusive sneaker releases, our vision includes future enhancements to implement advanced bot detection mechanisms. We aspire to continuously evolve Sole Seeker, ensuring a level playing field for all users by preventing automated entries in our raffle system.
+
 
 ## Learning and Growth Journey
 
@@ -49,7 +50,7 @@ Reflect on your journey in learning software engineering through concrete scenar
 
 Summarize your product's value proposition with relatable examples. For instance, explain how your app's streamlined user interface improves navigation for users, enhancing their overall experience.
 
-_Meet Sole Seeker, your passport to hassle-free sneaker wins! With a seamless user journey, start by creating an account effortlessly. Once in, our sleek login screen welcomes you to a curated selection of exclusive sneakers. Are you eady to elevate your sneaker game? Enter the raffle, and if you're the lucky winner, securely purchase your dream sneakers right within the app. No frills, just thrills – that's Sole Seeker, your go-to for a straightforward path to coveted sneaker victories. Step into style, step into Sole Seeker._
+_Meet Sole Seeker, your passport to hassle-free sneaker wins! With a seamless user journey, start by creating an account effortlessly. Once in, our sleek login screen welcomes you to a curated selection of exclusive sneakers. Are you ready to elevate your sneaker game? Enter the raffle, and if you're the lucky winner, securely purchase your dream sneakers right within the app. No frills, just thrills – that's Sole Seeker, your go-to for a straightforward path to coveted sneaker victories. Step into style, step into Sole Seeker._
 
 ### Product Demo
 
@@ -64,7 +65,7 @@ Share simple examples of your product's functionality:
 Simplify a technical concept with an example:
 
  - **Example 1:** Explain the client-server architecture by comparing it to a waiter taking orders (client) and a kitchen preparing food (server).
-  - **Example 1:** To login to our system, our app is connected to Firebase Authentication (server). The user must type in their username and password into our application (client) and it is verified when the data is sent to the server.
+  - **Example 1:** To log in to our system, our app is connected to Firebase Authentication (server). The user must type in their username and password into our application (client) and it is verified when the data is sent to the server.
   - **Example 2:** 
 
 
